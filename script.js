@@ -1,20 +1,23 @@
 const containerPokemon = document.querySelector("#containerPokemon");
-const quantidadePokemons = 102;
+const quantidadePokemons = 151;
+
 const cores = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
-    electric: '#FCF7DE',
-    water: '#DEF3FD',
-    ground: '#f4e7da',
-    rock: '#d5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
-    dragon: '#97b3e6',
-    psychic: '#eaeda1',
-    flying: '#F5F5F5',
-    fighting: '#E6E0D4',
-    normal: '#F5F5F5'
+    grass: '#9bcc50',
+    fire: '#fd7d24',
+    water: '#4592c4',
+    bug: '#729f3f',
+    poison: '#b97fc9',
+    normal:  '#a4acaf',
+    flying: '#89f',   
+    electric: '#eed535',   
+    ground: '#db5',
+    fairy: '#fdb9e9',
+    fighting: '#d56723',
+    psychic: '#f366b9',
+    rock: '#a38c21',       
+    dragon: '#76e',
+    ice: '#51c4e7',
+    dark: '#754'    
 }
 
 const tipos = Object.keys(cores)

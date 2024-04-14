@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&family=Oswald:wght@200..700&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -55,6 +57,9 @@ body{
 }
 
 .numero{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+
     background-color: rgba(0, 0, 0, 0.15);
     padding: 2px 13px;
     border-radius: 10px;
@@ -63,8 +68,13 @@ body{
 }
 
 .nome{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-style: normal;
     margin: 15px 0 7px;
     letter-spacing: 1.5px;
+
 }
 
 .tipo{
