@@ -1,5 +1,5 @@
 const containerPokemon = document.querySelector("#containerPokemon");
-const quantidadePokemons = 151;
+const quantidadePokemons = 500;
 
 const traducoesTipos = {
     grass: 'Grama',
@@ -10,14 +10,16 @@ const traducoesTipos = {
     normal: 'Normal',
     flying: 'Voador',
     electric: 'Elétrico',
-    ground: '=Terra',
+    ground: 'Terra',
     fairy: 'Fada',
     fighting: 'Lutador',
     psychic: 'Psíquico',
     rock: 'Pedra',
     dragon: 'Dragão',
     ice: 'Gelo',
-    dark: 'Sombrio'
+    dark: 'Sombrio',
+    ghost: 'Fantasma',
+    steel: 'Metal'
 };
 
 const cores = {
@@ -36,7 +38,10 @@ const cores = {
     rock: '#a38c21',       
     dragon: '#76e',
     ice: '#51c4e7',
-    dark: '#754'    
+    dark: '#754',
+    ghost: '#7b62a3',
+    steel: '#9eb7b8'
+
 }
 
 const tipos = Object.keys(cores)
