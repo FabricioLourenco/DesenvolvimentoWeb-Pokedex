@@ -1,6 +1,25 @@
 const containerPokemon = document.querySelector("#containerPokemon");
 const quantidadePokemons = 151;
 
+const traducoesTipos = {
+    grass: 'Grama',
+    fire: 'Fogo',
+    water: 'Água',
+    bug: 'Inseto',
+    poison: 'Venenoso',
+    normal: 'Normal',
+    flying: 'Voador',
+    electric: 'Elétrico',
+    ground: '=Terra',
+    fairy: 'Fada',
+    fighting: 'Lutador',
+    psychic: 'Psíquico',
+    rock: 'Pedra',
+    dragon: 'Dragão',
+    ice: 'Gelo',
+    dark: 'Sombrio'
+};
+
 const cores = {
     grass: '#9bcc50',
     fire: '#fd7d24',
@@ -35,7 +54,7 @@ async function buscarPokemon(id){
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const resp = await fetch (url);
     const data = await resp.json();
-    //console.log(data);
+
     criarCardPokemon(data);
 }
 
@@ -45,31 +64,31 @@ function criarCardPokemon(pokemon){
     card.classList.add("pokemon");
 
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
     const id = pokemon.id.toString().padStart(3, '0');
 
     const tiposPokemon = pokemon.types.map(type => type.type.name);
-    console.log(tiposPokemon);
-    const tipo = tipos.find(type => tiposPokemon.indexOf(type) > -1);
-    const cor = cores[tipo];
-
-    card.style.backgroundColor = cor
-
-    const pokemonInnerHTML = `
+    const coresTipos = tiposPokemon.map(tipo => cores[tipo]);
     
+    card.style.background = coresTipos.length === 1 ? coresTipos[0] : `linear-gradient(to right, ${coresTipos.join(', ')})`;
+
+    const tiposHTML = tiposPokemon.map(tipo => `<span class="tipo ${tipo}" title="${traducoesTipos[tipo]}">${traducoesTipos[tipo]}</span>`).join(' ');
+    
+    const pokemonInnerHTML = `
         <div class="imagem-pokemon">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${nome}">
         </div>
         <div class="informacoes">
             <span class="numero">#${id}</span>
             <h3 class="nome">${nome}</h3>
-            <small class="tipo">Tipo: <span>${tipo}</span> </small>
+            <small class="tipos">${tiposHTML}</small>
         </div>   
-    `
+    `;
 
     card.innerHTML = pokemonInnerHTML;
     containerPokemon.appendChild(card);
-
 }
+
 
 
 buscarTodosPokemons();
