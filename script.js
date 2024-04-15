@@ -1,5 +1,5 @@
 const containerPokemon = document.querySelector("#containerPokemon");
-const quantidadePokemons = 151;
+const quantidadePokemons = 500;
 
 const traducoesTipos = {
     grass: 'Grama',
